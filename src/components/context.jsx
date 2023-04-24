@@ -24,9 +24,7 @@ const AppContext = ({ children }) => {
   const toggleDarkTheme = () => {
     const newDarkTheme = !isDarkTheme;
     setIsDarkTheme(newDarkTheme);
-    const body = document.querySelector('body');
-    console.log(body);
-    body.classList.toggle('dark-theme', newDarkTheme);
+    localStorage.setItem('darkTheme', newDarkTheme);
   };
   return (
     <GlobalContext.Provider
